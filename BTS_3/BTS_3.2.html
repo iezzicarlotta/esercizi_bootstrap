@@ -1,0 +1,93 @@
+
+
+<!-- ========== BTS_3.2.html ========== -->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTS_3.2 - Immagini & Jumbotron (Bootstrap 5)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Quick helper to clear floats on small screens for better stacking */
+    @media (max-width: 575.98px) {
+      .float-start, .float-end { float: none !important; display: block; margin-left: auto; margin-right: auto; }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="container py-4">
+    <header class="mb-4">
+      <h1 class="h3">BTS_3.2 - Immagini, Jumbotron alternativo, Alert e Bottoni</h1>
+      <p class="text-muted">Segui i commenti nel codice per capire cosa fa ogni classe di Bootstrap.</p>
+    </header>
+
+    <!-- Jumbotron alternative (Bootstrap 5: non esiste più il componente jumbotron ufficiale) -->
+    <section class="mb-4">
+      <div class="bg-info text-white p-4 rounded">
+        <h2 class="h4">Benvenuto — Anteprima delle immagini</h2>
+        <p class="mb-0">Qui ci sono tre immagini dimostrate con stili diversi: cerchio a destra, thumbnail centrato, immagine a sinistra con bordi arrotondati.</p>
+      </div>
+    </section>
+
+    <!-- Images: usa immagini reperite sul web -->
+    <section class="mb-4">
+      <!-- immagine fluttuante a destra in un cerchio -->
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80" alt="Immagine destra" class="float-end rounded-circle ms-3 mb-2" style="width:120px;height:120px;object-fit:cover;">
+
+      <!-- immagine centrata in thumbnail -->
+      <div class="text-center my-3">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="img-thumbnail" style="max-width:320px;">
+      </div>
+
+      <!-- immagine fluttuante a sinistra con bordi arrotondati -->
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=400&q=80" alt="Immagine sinistra" class="float-start rounded ms-3 mb-2" style="width:140px;height:100px;object-fit:cover;">
+
+      <div class="clearfix"></div> <!-- assicura che il layout continui dopo i float -->
+    </section>
+
+    <!-- Alert success con link che ritorna all'inizio e bottone di chiusura (fade) -->
+    <section class="mb-4">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Fatto!</strong> Hai visto le immagini. <a href="#top" class="alert-link">Torna all'inizio</a>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </section>
+
+    <!-- Bottoni: outline, block level (w-100), gruppo con dropdown -->
+    <section class="mb-4">
+      <h3 class="h6">Bottoni di esempio</h3>
+
+      <!-- Outline button -->
+      <button class="btn btn-outline-primary me-2">Outline Button</button>
+
+      <!-- Block level button: in Bootstrap 5 si usa w-100 per renderlo full width -->
+      <div class="my-3">
+        <button class="btn btn-primary w-100">Block-level button (w-100)</button>
+      </div>
+
+      <!-- Button group con dropdown innestato -->
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-secondary">Opzione 1</button>
+        <button type="button" class="btn btn-secondary">Opzione 2</button>
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Altro</button>
+          <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <li><a class="dropdown-item" href="#">Azione</a></li>
+            <li><a class="dropdown-item" href="#">Altro</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Link separato</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-4 small text-muted">
+      <p>Prova a cambiare il valore width/height delle immagini o a sostituire gli URL con quelli che preferisci. Per il "cerchio" usiamo la classe <code>rounded-circle</code>. Per il thumbnail: <code>img-thumbnail</code>.</p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

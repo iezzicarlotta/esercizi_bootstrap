@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTS_3.1 - Tabelle Bootstrap 5</title>
+
+  <!-- Link a Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Applichiamo i colori sia alle righe che alle celle (th e td)
+       e aggiungiamo maggiore specificità + !important per sovrascrivere
+       eventuali regole di Bootstrap o cache del browser. */
+
+    .table-custom.table-striped tbody tr:nth-of-type(odd),
+    .table-custom.table-striped tbody tr:nth-of-type(odd) th,
+    .table-custom.table-striped tbody tr:nth-of-type(odd) td {
+      background-color: #f3bff5 !important; /* rosa */
+      color: #000000 !important; /* testo nero */
+    }
+
+    .table-custom.table-striped tbody tr:nth-of-type(even),
+    .table-custom.table-striped tbody tr:nth-of-type(even) th,
+    .table-custom.table-striped tbody tr:nth-of-type(even) td {
+      background-color: #c4c1f3 !important; /* azzurro */
+      color: #000000 !important; /* testo nero */
+    }
+  </style>
+
+</head>
+
+<body id="top">
+  <div class="container py-4">
+    <header class="mb-4">
+      <h1 class="h3">BTS_3.1 - Tabelle (esercitazione)</h1>
+      <p class="text-muted">Esempio con intestazione rossa e righe alternate nere/grigie. Sotto: versione responsive.</p>
+    </header>
+
+    <!-- Layout grid sensato: usiamo una riga con due colonne per mostrare le due tabelle affiancate su desktop -->
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h2 class="h5">Tabella normale (4x4 + intestazione)</h2>
+        <!-- Table: 'table' is the Bootstrap table base class. Add 'table-striped' for stripe behavior (we override colors via CSS). -->
+        <table class="table table-bordered table-striped table-custom">
+          <thead class="table-danger">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Colonna A</th>
+              <th scope="col">Colonna B</th>
+              <th scope="col">Colonna C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Val A1</td>
+              <td>Val B1</td>
+              <td>Val C1</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Val A2</td>
+              <td>Val B2</td>
+              <td>Val C2</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Val A3</td>
+              <td>Val B3</td>
+              <td>Val C3</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Val A4</td>
+              <td>Val B4</td>
+              <td>Val C4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h2 class="h5">Tabella responsive</h2>
+        <!-- Wrap the table in .table-responsive so it scrolls horizontally on small screens -->
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-custom">
+            <thead class="table-danger">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Colonna A</th>
+                <th scope="col">Colonna B</th>
+                <th scope="col">Colonna C</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Val A1</td>
+                <td>Val B1</td>
+                <td>Val C1</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Val A2</td>
+                <td>Val B2</td>
+                <td>Val C2</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Val A3</td>
+                <td>Val B3</td>
+                <td>Val C3</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Val A4</td>
+                <td>Val B4</td>
+                <td>Val C4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-4 small text-muted">
+      <p>Consigli: prova a cambiare i colori nelle regole CSS `.table-custom` o rimuovi la classe <code>table-striped</code> per vedere la differenza.</p>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
