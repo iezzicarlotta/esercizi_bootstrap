@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTS_4.1 - Alerts/Buttons/Badges/Pagination (Bootstrap 5)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Piccoli stili di utilità per l'esercizio */
+    .example-box { background: #f8f9fa; border: 1px dashed #ddd; padding: 1rem; border-radius: .5rem; }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <header class="mb-4">
+      <h1 class="h3">BTS_4.1 - Esercizi: Badges, Pagination, List group, Card, Collapse, Nav</h1>
+      <p class="text-muted">Layout in grid: ogni componente è mostrato con esempi pratici e commenti.</p>
+    </header>
+
+    <!-- Grid: due colonne su md+ -->
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h2 class="h5">Badges</h2>
+        <div class="example-box mb-3">
+          <p>Badge inline su pulsante: <button class="btn btn-primary">Messaggi <span class="badge bg-light text-dark">4</span></button></p>
+          <p>Badge come pill (rounded): <span class="badge rounded-pill bg-success">Nuovo</span></p>
+          <p>Badge in una lista: <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Notifica <span class="badge bg-primary rounded-pill">12</span></a></p>
+        </div>
+
+        <h2 class="h5">Pagination</h2>
+        <div class="example-box mb-3">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active" aria-current="page"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+
+          <p class="mt-2">Esempio di pagination centrate:</p>
+          <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <h2 class="h5">List group</h2>
+        <div class="example-box mb-3">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Primo elemento</div>
+                Descrizione breve.
+              </div>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+            <li class="list-group-item">Secondo elemento</li>
+            <li class="list-group-item">Terzo elemento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h2 class="h5">Card</h2>
+        <div class="example-box mb-3">
+          <div class="card" style="width: 100%;">
+            <img src="https://picsum.photos/seed/card/600/200" class="card-img-top" alt="immagine card">
+            <div class="card-body">
+              <h5 class="card-title">Titolo della card</h5>
+              <p class="card-text">Testo della card: descrizione, link e badge.</p>
+              <a href="#" class="btn btn-primary">Azione</a>
+              <span class="badge bg-secondary ms-2">Info</span>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="h5">Collapse</h2>
+        <div class="example-box mb-3">
+          <p>
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Mostra/Nascondi dettagli
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              Qui ci sono i contenuti nascosti dal collapse. Puoi mettere testo, immagini, form.
+            </div>
+          </div>
+        </div>
+
+        <h2 class="h5">Nav / Navbar</h2>
+        <div class="example-box mb-3">
+          <!-- Esempio di Navbar semplice -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Menu
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Azione</a></li>
+                      <li><a class="dropdown-item" href="#">Altro</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Cerca</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="mt-4 text-muted small">Consiglio: prova a togliere/aggiungere classi per vedere come cambiano i comportamenti.</footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
