@@ -1,0 +1,275 @@
+<!--
+File: BTS_5/BTS_5.1.html
+Descrizione: mini-sito per la "Gelateria della Nonna" che mostra come personalizzare la palette di Bootstrap 5.
+Istruzioni: il file usa il CDN di Bootstrap 5 e sovrascrive le variabili CSS di Bootstrap
+           per mappare le classi .primary, .success, .info, .warning, .danger, .secondary, .dark, .light.
+-->
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTS_5.1 — Gelateria della Nonna</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Personalizzazione variabili Bootstrap per Gelateria della Nonna -->
+  <style>
+    :root{
+      /* Palette ispirata ai gusti di gelato: fragola, pistacchio, limone, crema, lampone */
+      --bs-primary:    #ff8fab; /* rosa fragola (primary) */
+      --bs-success:    #a8e6cf; /* verde pistacchio (success) */
+      --bs-info:       #ffd3b6; /* pesca chiaro (info) */
+      --bs-warning:    #ffd166; /* giallo limone (warning) */
+      --bs-danger:     #ff6b6b; /* lampone / corallo (danger) */
+      --bs-secondary:  #c5cbe3; /* lavanda tenue (secondary) */
+      --bs-dark:       #2b2b39; /* testo scuro */
+      --bs-light:      #fffaf0; /* crema molto chiaro */
+
+      --bs-link-color: var(--bs-primary);
+      --bs-body-bg: #ffffff; /* sfondo bianco richiesto */
+      --bs-body-color: #212529; /* testo scuro */
+    }
+
+    body{background-color: var(--bs-body-bg); color: var(--bs-body-color);}
+    .hero{padding: 3rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.05);} 
+    .flavour-badge{font-weight:600}
+    .card-img-top{height:200px; object-fit:cover}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Gelateria della Nonna</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gusti">Gusti</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Gelati artigianali come una volta</h1>
+      <p class="lead">Benvenuti alla <strong>Gelateria della Nonna</strong> — gusti freschi, ricette di famiglia e ingredienti naturali.</p>
+      <p>
+        <a class="btn btn-primary btn-lg me-2" href="#gusti">Scopri i gusti</a>
+        <a class="btn btn-outline-secondary btn-lg" href="#contatti">Ordina</a>
+      </p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Gusti della settimana</h5>
+            <p class="card-text">Una selezione di gusti consigliati dalla nonna: prova le nostre ricette tradizionali e le novità stagionali.</p>
+            <a href="#gusti" class="btn btn-primary">Vedi gusti</a>
+            <a href="#contatti" class="btn btn-success ms-2">Prenota</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card bg-light">
+          <div class="card-body">
+            <h5 class="card-title">Offerta</h5>
+            <p class="card-text">Ogni giovedì coppetta media a prezzo speciale.</p>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark me-1">Sconto</span>
+              <span class="badge bg-danger">Novità</span>
+              <span class="badge bg-secondary">Artigianale</span>
+            </div>
+            <div class="alert alert-info">Prodotti preparati senza additivi artificiali.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section id="gusti" class="mt-5">
+      <h2>I nostri gusti</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <!-- 1 Pistacchio -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\pistacchio.jpg" class="card-img-top" alt="Pistacchio">
+            <div class="card-body">
+              <h5 class="card-title">Pistacchio</h5>
+              <p class="card-text">Pistacchi selezionati, gusto autentico e verde intenso.</p>
+              <span class="badge bg-success flavour-badge">Artigianale</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Disponibilità: <span class="badge bg-success">Fresco</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Fiordilatte -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\gelato_fiordilatte.webp" class="card-img-top" alt="Fiordilatte">
+            <div class="card-body">
+              <h5 class="card-title">Fiordilatte</h5>
+              <p class="card-text">Classico cremoso con latte di alta qualità.</p>
+              <span class="badge bg-primary flavour-badge">Consigliato</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Prezzo: <span class="text-primary">€2.50</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Fragola -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\gelato_fragola.webp" class="card-img-top" alt="Fragola">
+            <div class="card-body">
+              <h5 class="card-title">Fragola</h5>
+              <p class="card-text">Fragole fresche e nessun colorante.</p>
+              <span class="badge bg-danger flavour-badge">Fresco</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Prezzo: <span class="text-primary">€2.80</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Cioccolato -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\gelato_ciocc.jpg" class="card-img-top" alt="Cioccolato">
+            <div class="card-body">
+              <h5 class="card-title">Cioccolato</h5>
+              <p class="card-text">Cioccolato fondente per un gusto intenso.</p>
+              <span class="badge bg-secondary flavour-badge">Classico</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Prezzo: <span class="text-primary">€2.80</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Nocciola -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\gelato_nocciola.jpg" class="card-img-top" alt="Nocciola">
+            <div class="card-body">
+              <h5 class="card-title">Nocciola</h5>
+              <p class="card-text">Nocciole tostate per un aroma ricco.</p>
+              <span class="badge bg-secondary flavour-badge">Goloso</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Prezzo: <span class="text-primary">€3.00</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Menta & Cioccolato -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\menta_e_cioccolato.jpg" class="card-img-top" alt="Menta e Cioccolato">
+            <div class="card-body">
+              <h5 class="card-title">Menta &amp; Cioccolato</h5>
+              <p class="card-text">Freschezza della menta con scaglie di cioccolato.</p>
+              <span class="badge bg-info flavour-badge">Fresco</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Prezzo: <span class="text-primary">€2.90</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 Frutti di Bosco / Yogurt -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\frutti_bosco.webp" class="card-img-top" alt="Frutti di bosco">
+            <div class="card-body">
+              <h5 class="card-title">Yogurt &amp; Frutti di Bosco</h5>
+              <p class="card-text">Yogurt cremoso con frutti di bosco freschi.</p>
+              <span class="badge bg-danger flavour-badge">Fruttato</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Prezzo: <span class="text-primary">€3.00</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 Mango -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\mango.jpg" class="card-img-top" alt="Mango">
+            <div class="card-body">
+              <h5 class="card-title">Mango</h5>
+              <p class="card-text">Mango tropicale fresco.</p>
+              <span class="badge bg-warning flavour-badge text-dark">Esotico</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Prezzo: <span class="text-primary">€3.20</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 Limone -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img\gelato_limone.jpg" class="card-img-top" alt="Limone">
+            <div class="card-body">
+              <h5 class="card-title">Limone</h5>
+              <p class="card-text">Rinfrescante, preparato con succo di limoni biologici.</p>
+              <span class="badge bg-warning flavour-badge text-dark">Rinfrescante</span>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <a href="#" class="btn btn-outline-primary">Dettagli</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti" class="mt-5">
+      <h2>Contatti e ordini</h2>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nome</label>
+          <input class="form-control" placeholder="Tuo nome">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input class="form-control" placeholder="tuo@email.com">
+        </div>
+        <div class="col-12">
+          <label class="form-label">Messaggio / Ordine</label>
+          <textarea class="form-control" rows="3" placeholder="Esempio: 2 coppette fiordilatte, 1 vaschetta pistacchio"></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary">Invia ordine</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="py-4 bg-dark text-light mt-5">
+    <div class="container text-center">
+      <small>© 2025 Gelateria della Nonna — Gelati artigianali</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (bundle con Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
